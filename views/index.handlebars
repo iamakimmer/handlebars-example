@@ -1,0 +1,16 @@
+{{#each posts}}
+	<div class="post">
+		{{#if this.image}}
+			<img class="img" src="{{this.image}}"/>
+		{{else}}
+			<img class="img" src="/img/rutgers.png"/>
+		{{/if}}
+
+		{{#if this.url}}
+			<a href="{{this.url}}">{{this.title}}</a>
+		{{else}}
+			{{this.title}}
+		{{/if}}	
+		<a href="/posts/{{this.id}}" class="btn btn-primary pull-right">View Details</a>
+	</div>
+{{/each}}

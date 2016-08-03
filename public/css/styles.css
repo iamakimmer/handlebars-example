@@ -1,0 +1,15 @@
+.post {
+	border: 1px solid #cecece;
+	padding: 10px;
+	height: 120px;
+}
+.img {
+	width: 80px;
+}
+footer {
+	height: 50px;
+	width: 100%;
+	padding: 10px;
+	background-color: #cecece;
+	text-align: center;
+}
