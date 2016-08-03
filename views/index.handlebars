@@ -1,5 +1,10 @@
 {{#each posts}}
 	<div class="post">
+		<div class="voting">
+			<span class="score" data-post="{{this.id}}">{{this.score}}</span>
+			<button class="btn-xs btn-success up fa fa-thumbs-up"></button>
+			<button class="btn-xs btn-danger down fa fa-thumbs-down"></button>
+		</div>
 		{{#if this.image}}
 			<img class="img" src="{{this.image}}"/>
 		{{else}}

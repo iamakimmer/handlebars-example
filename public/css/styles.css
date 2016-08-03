@@ -1,7 +1,6 @@
 .post {
 	border: 1px solid #cecece;
 	padding: 10px;
-	height: 120px;
 }
 .img {
 	width: 80px;
@@ -12,4 +11,7 @@ footer {
 	padding: 10px;
 	background-color: #cecece;
 	text-align: center;
+}
+.voting {
+	margin-bottom: 2px;
 }

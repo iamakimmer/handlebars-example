@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var handlebars = require('express-handlebars');
-
+var sequelize = require('sequelize');
 var Posts = require('./models')['Posts'];
 Posts.sync();
 
@@ -23,7 +23,9 @@ app.set('view engine', 'handlebars');
 //home page
 app.get('/', function(req, res) {
 
-	Posts.findAll({}).then(function(result) {
+	Posts.findAll({
+		order: 'score DESC'
+	}).then(function(result) {
 		console.log(result);
 		return res.render('index', {
 			posts: result
@@ -67,6 +69,19 @@ app.get('/posts/:id', function(req, res) {
 			post: post
 		});
 	});	
+});
+
+app.post('/posts/:id/:vote', function(req, res) {
+	var operation = '+';
+	if (req.params.vote === 'downvote') {
+		operation = '-';
+	}
+
+	Posts.update({
+		score: sequelize.literal('score ' + operation + ' 1')}, 
+	{where: {id: req.params.id}}).then(function(post) {
+		res.end();
+	});
 });
 
 var port = process.env.PORT || 3000;
