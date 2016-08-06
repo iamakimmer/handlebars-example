@@ -15,3 +15,17 @@ footer {
 .voting {
 	margin-bottom: 2px;
 }
+header {
+	background-color: #000;
+	color: #fff;
+}
+header a {
+	color: #fff;
+	margin: 0 10px;
+}
+header a:hover {
+	color: #fff;
+}
+header a:focus {
+	color: #fff;
+}

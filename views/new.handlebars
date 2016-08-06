@@ -9,6 +9,17 @@
 	</div>
 
 	<div>
+		Category:
+		<select name="category" required>
+			<option value="">Please select a category</option>
+			{{#each categories}}
+				<option value="{{this.id}}">{{this.title}}</option>
+			{{/each}}
+		</select>
+	</div>
+
+
+	<div>
 		Url: <input type="text" name="url"/>
 	</div>
 

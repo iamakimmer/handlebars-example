@@ -1,0 +1,24 @@
+<h1>{{categoryName}}</h1>
+{{#each category}}
+{{#each this.Posts}}
+	<div class="post">
+		<div class="voting">
+			<span class="score" data-post="{{this.id}}">{{this.score}}</span>
+			<button class="btn-xs btn-success up fa fa-thumbs-up"></button>
+			<button class="btn-xs btn-danger down fa fa-thumbs-down"></button>
+		</div>
+		{{#if this.image}}
+			<img class="img" src="{{this.image}}"/>
+		{{else}}
+			<img class="img" src="/img/rutgers.png"/>
+		{{/if}}
+
+		{{#if this.url}}
+			<a href="{{this.url}}">{{this.title}}</a>
+		{{else}}
+			{{this.title}}
+		{{/if}}
+		<a href="/posts/{{this.id}}" class="btn btn-primary pull-right">View Details</a>
+	</div>
+{{/each}}
+{{/each}}

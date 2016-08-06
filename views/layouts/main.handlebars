@@ -3,13 +3,17 @@
 	<title>RCB Reddit</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/styles.css">
 
 </head>
 	<body>
-
+		<header>
+			{{#each categories}}
+				<a href="/categories/{{this.title}}">{{this.title}}</a>
+			{{/each}}
+		</header>
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -26,11 +30,11 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li class="active"><a href="/new-post">Submit New Post <span class="sr-only">(current)</span></a></li>		        		        
-		      </ul>		      		     
+		        <li class="active"><a href="/new-post">Submit New Post <span class="sr-only">(current)</span></a></li>
+		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
-		</nav>	
+		</nav>
 	<div class="container">
 		{{{ body }}}
 	</div>

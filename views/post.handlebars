@@ -3,3 +3,12 @@
 <h2>Image: {{post.image}}</h2>
 <h2>Description: {{post.description}}</h2>
 <h2>Score: {{post.score}}</h2>
+
+<form action="/{{post.id}}/comment" method="post">
+  <input type="text" name="comment" value="" placeholder="Add a comment">
+  <button type="submit">Submit Comment</button>
+</form>
+<h1>Comments:</h1>
+{{#each post.Comments}}
+  <div>{{this.createdAt}} - {{this.comment}}</div>
+{{/each}}
